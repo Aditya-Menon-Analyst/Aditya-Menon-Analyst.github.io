@@ -82,10 +82,12 @@ a:hover { text-decoration-thickness: 2px; }
 }
 
 .top {
-  display: flex; justify-content: space-between; align-items: baseline;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 10px 24px;
   padding-block: 24px;
 }
 .mark {
+  white-space: nowrap;
   font-weight: 800; font-variation-settings: "wdth" 125;
   text-decoration: none; letter-spacing: -0.01em;
 }
@@ -158,7 +160,8 @@ a:hover { text-decoration-thickness: 2px; }
 .hint { margin: 1.75rem 0 0; color: var(--muted); }
 
 /* Work */
-.work { padding-block: 24px 96px; }
+.work { padding-block: 24px 72px; }
+.work + .work { padding-top: 0; }
 
 .work-head {
   display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
@@ -235,6 +238,8 @@ h2 {
   padding-left: calc(6px + clamp(14px, 2.4vw, 28px));
 }
 .detail p { margin: 0 0 14px; max-width: 64ch; }
+.detail .points { margin: 0 0 14px; padding-left: 1.1em; max-width: 64ch; }
+.detail .points li { margin-bottom: 8px; }
 .detail .tools { color: var(--muted); font-size: 0.95rem; }
 .detail .go { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0 0 24px; padding: 0; list-style: none; }
 .detail .go a { font-weight: 700; }

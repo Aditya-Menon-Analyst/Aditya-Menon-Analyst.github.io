@@ -8,6 +8,56 @@
     build: "Build"
   };
 
+  var JOBS = [
+    {
+      verb: "show",
+      title: "Techmentee Inc.",
+      meta: "Business Analyst, Vienna, US. Jul 2025 to Jun 2026",
+      result: "41.2%", resultNote: "faster reporting",
+      points: [
+        "Deployed Power BI dashboards across 5 channels, bringing key performance metrics into one reporting framework. This cut reporting cycles by 41.2% and gave leadership one view of audience behavior trends.",
+        "Analyzed cross-channel engagement data in SQL and Excel to isolate high-performing content segments, driving a 14% increase in click-through rate.",
+        "Synthesized 1,000+ user survey responses with frequency analysis to surface customer insights that shaped outreach strategy and audience targeting."
+      ],
+      tools: "Power BI, SQL, Excel"
+    },
+    {
+      verb: "predict",
+      title: "Los Angeles Football Club",
+      meta: "Business Analyst, Durham, US. Feb 2025 to May 2025",
+      result: "93%", resultNote: "model accuracy",
+      points: [
+        "Cleaned and engineered features on 900K+ ticket records using SQL and Python, improving data quality by 29% and producing a model-ready dataset.",
+        "Developed a Random Forest classification model in Python to predict ticket scan likelihood with 93% accuracy, informing an oversell strategy projected to cut no-show rates by 15%.",
+        "Structured a two-tier oversell model from attendance patterns and ticket utilization data, raising attendance by 18.1% and driving $70.4M ARR."
+      ],
+      tools: "SQL, Python, Random Forest"
+    },
+    {
+      verb: "explain",
+      title: "Duke Advanced Degree Consulting Club",
+      meta: "Business Consultant, Durham, US. Jan 2025 to May 2025",
+      result: "$40M", resultNote: "revenue opportunity",
+      points: [
+        "Ran competitive benchmarking and customer segmentation in Excel across market verticals, uncovering a $40M revenue opportunity that shaped go-to-market strategy for a Fortune 250 client.",
+        "Built DCF and TAM models to size addressable markets and forecast incremental revenue, projecting $80M in portfolio-wide sales growth to guide market entry priorities.",
+        "Presented findings to executives, turning complex analysis into a clear story backed by models and KPIs."
+      ],
+      tools: "Excel, DCF and TAM modeling"
+    },
+    {
+      verb: "explain",
+      title: "RecoTree Technology Solutions",
+      meta: "Data Analyst, Chennai, India. Jun 2023 to May 2024",
+      result: "14%", resultNote: "more conversions",
+      points: [
+        "Performed exploratory analysis on inventory logs using SQL and Python, finding supply chain inefficiencies and reducing order delays by 8.4%.",
+        "Ran checkout A/B tests that increased conversions by 14% and engagement by 23.6%, and automated Tableau dashboards to cut weekly reporting time by 30%."
+      ],
+      tools: "SQL, Python, Tableau, A/B testing"
+    }
+  ];
+
   var PROJECTS = [
     {
       verb: "build",
@@ -15,7 +65,7 @@
       meta: "Live product, AI search",
       result: "Live", resultNote: "aivischecker.com",
       body: "A free tool that checks how ready a website is to be found and cited by AI search engines like ChatGPT and Perplexity. Every check is labelled by how strong the evidence behind it is, and each failed check comes with a fix you can copy and paste.",
-      tools: "Astro, TypeScript, Cloudflare Workers, D1",
+      tools: "Astro, TypeScript, Cloudflare Workers, D1, Claude Code",
       links: [["Open the live site", "https://aivischecker.com"]]
     },
     {
@@ -35,6 +85,15 @@
       body: "An end-to-end workflow that scrapes job postings, filters for relevant roles, rewrites my resume for each one with AI and sends a tailored application. It cut most of the manual work out of outreach.",
       tools: "n8n, LLM APIs, HTTP APIs, document services",
       links: [["See the workflow", GH + "n8n-Automoation-Workflow"]]
+    },
+    {
+      verb: "show",
+      title: "MediTrack healthcare dashboard",
+      meta: "Dashboard, hospital operations",
+      result: "40%", resultNote: "less reporting time",
+      body: "An interactive dashboard for patient visits, resource utilization, ICD-10 diagnoses and prescription trends. Automated data aggregation and a seasonal demand forecast cut reporting time by 40% and made care and staffing decisions easier to see.",
+      tools: "Tableau",
+      links: [["Download the workbook", GH + "Heathcare-Analytics-Dashboard"]]
     },
     {
       verb: "predict",
@@ -64,13 +123,13 @@
       links: [["Read the code", GH + "Predictive-Modeling-for-Real-Estate-Pricing-in-Barcelona"]]
     },
     {
-      verb: "show",
-      title: "Healthcare analytics dashboard",
-      meta: "Dashboard, hospital operations",
-      result: "", resultNote: "",
-      body: "An interactive dashboard that helps a hospital plan care and resources. It covers patient trends, diagnoses, medications and staffing needs in one place.",
-      tools: "Tableau",
-      links: [["Download the workbook", GH + "Heathcare-Analytics-Dashboard"]]
+      verb: "explain",
+      title: "User insights and retention for Dognition",
+      meta: "SQL, data modeling",
+      result: "10%", resultNote: "more engagement",
+      body: "Modeled and normalized a six-table relational database, then used advanced SQL queries and exploratory analysis to uncover churn and lifecycle patterns. The work improved data integrity and lifted customer engagement by 10%.",
+      tools: "SQL, ERD+, data modeling",
+      links: []
     },
     {
       verb: "explain",
@@ -101,12 +160,15 @@
     }
   ];
 
-  var rowsEl = document.getElementById("rows");
-  var statusEl = document.getElementById("status");
+  var LISTS = [
+    { el: document.getElementById("jobs"), status: document.getElementById("jobs-status"), items: JOBS, noun: ["role", "roles"] },
+    { el: document.getElementById("rows"), status: document.getElementById("status"), items: PROJECTS, noun: ["project", "projects"] }
+  ];
   var hintEl = document.getElementById("hint");
   var claim = document.querySelector(".claim");
   var verbBtns = Array.prototype.slice.call(document.querySelectorAll(".verb"));
   var active = null;
+  var uid = 0;
 
   function el(tag, attrs, text) {
     var n = document.createElement(tag);
@@ -115,10 +177,9 @@
     return n;
   }
 
-  // Build rows
-  PROJECTS.forEach(function (p, i) {
+  function row(p) {
     var li = el("li", { "class": "row", "data-verb": p.verb, style: "--c: var(--" + p.verb + ")" });
-    var id = "detail-" + i;
+    var id = "detail-" + (uid++);
     var btn = el("button", { "class": "row-btn", "aria-expanded": "false", "aria-controls": id });
 
     btn.appendChild(el("span", { "class": "tick", "aria-hidden": "true" }));
@@ -136,17 +197,23 @@
 
     var detail = el("div", { "class": "detail", id: id, role: "region", "aria-label": p.title });
     var inner = el("div", { "class": "detail-inner" });
-    inner.appendChild(el("p", {}, p.body));
+    if (p.body) inner.appendChild(el("p", {}, p.body));
+    if (p.points) {
+      var ul = el("ul", { "class": "points" });
+      p.points.forEach(function (t) { ul.appendChild(el("li", {}, t)); });
+      inner.appendChild(ul);
+    }
     inner.appendChild(el("p", { "class": "tools" }, "Tools: " + p.tools));
-    var go = el("ul", { "class": "go" });
-    p.links.forEach(function (l) {
-      var a = el("a", { href: l[1] }, l[0]);
-      if (/^https?:/.test(l[1])) { a.target = "_blank"; a.rel = "noopener"; }
-      var item = el("li", {});
-      item.appendChild(a);
-      go.appendChild(item);
-    });
-    inner.appendChild(go);
+    if (p.links && p.links.length) {
+      var go = el("ul", { "class": "go" });
+      p.links.forEach(function (l) {
+        var a = el("a", { href: l[1], target: "_blank", rel: "noopener" }, l[0]);
+        var item = el("li", {});
+        item.appendChild(a);
+        go.appendChild(item);
+      });
+      inner.appendChild(go);
+    }
     detail.appendChild(inner);
     detail.inert = true;
 
@@ -158,39 +225,48 @@
 
     li.appendChild(btn);
     li.appendChild(detail);
-    rowsEl.appendChild(li);
+    return li;
+  }
+
+  LISTS.forEach(function (list) {
+    list.items.forEach(function (p) { list.el.appendChild(row(p)); });
   });
 
-  // Counts on each verb
+  // Counts on each verb cover roles and projects together
   verbBtns.forEach(function (b) {
-    var n = PROJECTS.filter(function (p) { return p.verb === b.dataset.verb; }).length;
+    var v = b.dataset.verb;
+    var n = JOBS.concat(PROJECTS).filter(function (p) { return p.verb === v; }).length;
     b.querySelector("sup").textContent = n;
-    b.setAttribute("aria-label", VERBS[b.dataset.verb] + ", " + n + " projects");
+    b.setAttribute("aria-label", VERBS[v] + ", " + n + " roles and projects");
   });
 
   function render() {
-    var shown = 0;
-    Array.prototype.forEach.call(rowsEl.children, function (li) {
-      var hide = active && li.dataset.verb !== active;
-      li.hidden = hide;
-      if (!hide) shown++;
+    LISTS.forEach(function (list) {
+      var shown = 0;
+      Array.prototype.forEach.call(list.el.children, function (li) {
+        var hide = active && li.dataset.verb !== active;
+        li.hidden = hide;
+        if (!hide) shown++;
+      });
+      var total = list.items.length;
+      list.status.textContent = "";
+      if (active) {
+        list.status.appendChild(document.createTextNode(shown + " of " + total + " " + list.noun[1] + ". "));
+        var clear = el("button", { type: "button" }, "Show all");
+        clear.addEventListener("click", function () { setVerb(null); });
+        list.status.appendChild(clear);
+      } else {
+        list.status.textContent = total + " " + list.noun[total === 1 ? 0 : 1];
+      }
     });
+
     verbBtns.forEach(function (b) {
       b.setAttribute("aria-pressed", String(b.dataset.verb === active));
     });
     claim.classList.toggle("filtering", !!active);
-
-    statusEl.textContent = "";
-    if (active) {
-      statusEl.appendChild(document.createTextNode(shown + " of " + PROJECTS.length + " projects. "));
-      var clear = el("button", { type: "button" }, "Show all");
-      clear.addEventListener("click", function () { setVerb(null); });
-      statusEl.appendChild(clear);
-      hintEl.textContent = "Showing what I " + active + ". Pick it again to see everything.";
-    } else {
-      statusEl.textContent = PROJECTS.length + " projects";
-      hintEl.textContent = "Pick a verb to see the work behind it.";
-    }
+    hintEl.textContent = active
+      ? "Showing where I " + active + ". Pick it again to see everything."
+      : "Pick a verb to see the work behind it.";
   }
 
   function setVerb(v) {
@@ -203,9 +279,9 @@
       var v = b.dataset.verb === active ? null : b.dataset.verb;
       setVerb(v);
       if (v) {
-        var top = document.getElementById("work").getBoundingClientRect().top;
-        if (top > window.innerHeight * 0.85) {
-          document.getElementById("work").scrollIntoView({ block: "start" });
+        var target = document.getElementById("experience");
+        if (target.getBoundingClientRect().top > window.innerHeight * 0.85) {
+          target.scrollIntoView({ block: "start" });
         }
       }
     });
