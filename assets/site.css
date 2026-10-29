@@ -51,7 +51,7 @@ body {
   color: var(--ink);
   font-family: "Archivo", system-ui, sans-serif;
   font-variation-settings: "wdth" 100;
-  font-size: 1.0625rem;
+  font-size: 1rem;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
@@ -96,18 +96,18 @@ a:hover { text-decoration-thickness: 2px; }
 .top nav a:hover { color: var(--ink); }
 
 /* Hero */
-.hero { padding-block: clamp(48px, 10vh, 120px) clamp(40px, 8vh, 96px); }
+.hero { padding-block: clamp(32px, 7vh, 80px) clamp(32px, 6vh, 64px); }
 
 .intro { margin: 0 0 1.5rem; color: var(--muted); max-width: 36ch; }
 
 .claim {
   margin: 0;
   font-weight: 800;
-  font-size: clamp(2.6rem, 8.4vw, 7.6rem);
-  line-height: 0.98;
+  font-size: clamp(2.1rem, 5.4vw, 4.4rem);
+  line-height: 1.02;
   letter-spacing: -0.035em;
   font-variation-settings: "wdth" 100;
-  max-width: 14ch;
+  max-width: 17ch;
 }
 
 .verb {
@@ -160,7 +160,7 @@ a:hover { text-decoration-thickness: 2px; }
 .hint { margin: 1.75rem 0 0; color: var(--muted); }
 
 /* Work */
-.work { padding-block: 24px 72px; }
+.work { padding-block: 16px 56px; }
 .work + .work { padding-top: 0; }
 
 .work-head {
@@ -170,7 +170,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 h2 {
   margin: 0;
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
   font-weight: 800;
   font-variation-settings: "wdth" 125;
   letter-spacing: -0.02em;
@@ -193,7 +193,7 @@ h2 {
   grid-template-columns: 6px minmax(0, 1fr) auto;
   align-items: center;
   column-gap: clamp(14px, 2.4vw, 28px);
-  padding: 20px 0;
+  padding: 16px 0;
   background: none; border: 0; color: inherit; font: inherit; text-align: left;
   cursor: pointer;
 }
@@ -201,7 +201,7 @@ h2 {
 
 .row-title {
   display: block;
-  font-size: clamp(1.15rem, 2.1vw, 1.5rem);
+  font-size: clamp(1.02rem, 1.5vw, 1.2rem);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -214,7 +214,7 @@ h2 {
 }
 .result b {
   display: block;
-  font-size: clamp(1.9rem, 4.6vw, 3.4rem);
+  font-size: clamp(1.4rem, 2.8vw, 2.1rem);
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.03em;
@@ -249,9 +249,9 @@ h2 {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 28px;
-  padding-block: 72px;
+  padding-block: 56px;
 }
-.about-body p { margin: 0 0 1em; max-width: 60ch; font-size: 1.15rem; line-height: 1.6; }
+.about-body p { margin: 0 0 1em; max-width: 60ch; font-size: 1.05rem; line-height: 1.6; }
 .kit { margin: 0; display: grid; gap: 18px; }
 .kit div { border-top: 1px solid var(--rule); padding-top: 10px; }
 .kit dt { font-weight: 700; }
@@ -262,12 +262,12 @@ h2 {
 }
 
 /* Contact */
-.contact { padding-block: 72px 56px; }
+.contact { padding-block: 56px 48px; }
 .contact h2 { margin-bottom: 20px; }
 .email {
   display: inline-block;
   font-weight: 800;
-  font-size: clamp(1.45rem, 5.4vw, 4.4rem);
+  font-size: clamp(1.3rem, 3.6vw, 2.6rem);
   letter-spacing: -0.03em;
   line-height: 1.05;
   font-variation-settings: "wdth" 85;
