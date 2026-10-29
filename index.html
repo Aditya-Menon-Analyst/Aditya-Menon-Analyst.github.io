@@ -1,190 +1,87 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Aditya Menon Analyst Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aditya Menon, analyst</title>
+  <meta name="description" content="Aditya Menon is a Duke Fuqua MQM analyst who explains, predicts, shows and builds with data. Projects in machine learning, causal inference, dashboards, strategy and small AI tools.">
+  <meta property="og:title" content="Aditya Menon, analyst">
+  <meta property="og:description" content="Projects in machine learning, causal inference, dashboards, strategy and small AI tools.">
+  <meta name="theme-color" content="#E6EBEE" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0C1724" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F2235'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='900' font-size='15' text-anchor='middle' fill='%23E6EBEE'%3EAM%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip" href="#work">Skip to projects</a>
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+  <header class="top">
+    <a class="mark" href="#">Aditya Menon</a>
+    <nav aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Aditya Menon <br /></h1> <h2> Analyst Project Portfolio</h2>
-						</h1>
-						<p>Aspiring Analyst | Fuqua MQM Graduate | Engineer | Proficient in SQL, Python, R, Tableau, Power BI, Excel & ML <br /><a href="https://www.linkedin.com/in/-aditya-menon/">@Aditya Menon</a>
-						</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="intro">Analyst with a Duke Fuqua MQM and an engineering degree.</p>
+      <h1 id="hero-title" class="claim">
+        I <button class="verb" data-verb="explain" style="--c: var(--explain)" aria-pressed="false">explain<sup></sup></button>,
+        <button class="verb" data-verb="predict" style="--c: var(--predict)" aria-pressed="false">predict<sup></sup></button>,
+        <button class="verb" data-verb="show" style="--c: var(--show)" aria-pressed="false">show<sup></sup></button>
+        and <button class="verb" data-verb="build" style="--c: var(--build)" aria-pressed="false">build<sup></sup></button>
+        with data.
+      </h1>
+      <p class="hint" id="hint">Pick a verb to see the work behind it.</p>
+    </section>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Data | Technology | Strategy</a>
-					</header>
+    <section id="work" class="work" aria-labelledby="work-title">
+      <div class="work-head">
+        <h2 id="work-title">Work</h2>
+        <p class="status" id="status" aria-live="polite"></p>
+      </div>
+      <ol class="rows" id="rows"></ol>
+      <noscript>
+        <p>Every project is on <a href="https://github.com/Aditya-Menon-Analyst">GitHub</a>.</p>
+      </noscript>
+    </section>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Projects</a></li>
-							
-						</ul>
-						<ul class="icons">
+    <section id="about" class="about" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <div class="about-body">
+        <p>I trained as an engineer, then did the Master of Quantitative Management at Duke's Fuqua School of Business. The work I like best ends in a decision someone can act on: a model a team can trust, a dashboard a hospital can staff from, a market entry plan with a number attached.</p>
+        <p>Lately I've been building small AI tools for myself and for other people. The biggest is a free checker that tells a site how ready it is to be found and cited by AI search engines.</p>
+      </div>
+      <dl class="kit">
+        <div><dt>Analysis</dt><dd>SQL, Python, R, Excel</dd></div>
+        <div><dt>Modeling</dt><dd>Regression, classification, deep learning, causal inference</dd></div>
+        <div><dt>Reporting</dt><dd>Tableau, Power BI</dd></div>
+        <div><dt>Building</dt><dd>n8n, LLM APIs, Astro, Cloudflare Workers</dd></div>
+      </dl>
+    </section>
 
-							<li><a href="https://www.linkedin.com/in/-aditya-menon/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Get in touch</h2>
+      <a class="email" href="mailto:aditya.menon@duke.edu">aditya.menon@duke.edu</a>
+      <ul class="links">
+        <li><a href="https://www.linkedin.com/in/-aditya-menon/">LinkedIn</a></li>
+        <li><a href="https://github.com/Aditya-Menon-Analyst">GitHub</a></li>
+        <li><a href="tel:+19196410266">(919) 641-0266</a></li>
+        <li><a href="https://www.instagram.com/adii_menonn/">Instagram</a></li>
+      </ul>
+    </section>
+  </main>
 
-				<!-- Main -->
-					<div id="main">
+  <footer class="foot">
+    <p>&copy; 2026 Aditya Menon</p>
+  </footer>
 
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									
-									<h2><a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/Classifying%20American%20Sign%20Language.ipynb">Classifying American Sign Language <br />
-									(Deep Learning)</a></h2>
-									<p>Built a deep learning model that recognizes American Sign Language gestures with 99% accuracy, 
-									improving accessibility for hearing-impaired individuals. 
-									</p>
-								</header>
-								<a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/Classifying%20American%20Sign%20Language.ipynb" class="image main"><img src="images/amer_sign2.png" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/Classifying%20American%20Sign%20Language.ipynb" class="button large">View Project</a></li>
-								</ul>
-							</article>
-
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-										
-										<h2><a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/Modeling%20and%20Analyzing%20Spotify%20Hits.R">Modeling and Analyzing Spotify Hits</a></h2>
-									</header>
-									<a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/Modeling%20and%20Analyzing%20Spotify%20Hits.R" class="image fit"><img src="images/ML Spotify.avif" alt="" /></a>
-									<p>Uncovered key audio traits and predicted song popularity with 80% accuracy using machine learning, empowering artists and marketers to create music that better connects with audiences and cultural trends.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/Modeling%20and%20Analyzing%20Spotify%20Hits.R" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										
-										<h2><a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/Heathcare%20Analytics%20Dashboard%20.twbx">Healthcare Analysis Dashboard</a></h2>
-									</header>
-									<a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/Heathcare%20Analytics%20Dashboard%20.twbx" class="image fit"><img src="images/Healthcare dash.jpg" alt="" /></a>
-									<p>Developed an interactive dashboard to help hospitals improve patient care and resource planning. The dashboard provides insights into patient trends, diagnoses, medications, and staffing needs, driving smarter care and operational efficiency.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/Heathcare%20Analytics%20Dashboard%20.twbx" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										
-										<h2><a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/Evaluating%20the%20Causal%20Impact%20of%20Surgery%20on%20Lung%20Cancer%20Survival.Rmd">Evaluating the Causal Impact of Surgery on Lung Cancer Survival</a></h2>
-									</header>
-									<a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/Evaluating%20the%20Causal%20Impact%20of%20Surgery%20on%20Lung%20Cancer%20Survival.Rmd" class="image fit"><img src="images/intravenous-chemotherapy-2.webp" alt="" /></a>
-									<p>Explored the effect of surgery on lung cancer survival using a patient dataset. Applied advanced statistical methods—like comparison groups, matching techniques, and machine learning models to estimate the impact of treatment across different patient types.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/Evaluating%20the%20Causal%20Impact%20of%20Surgery%20on%20Lung%20Cancer%20Survival.Rmd" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										
-										<h2><a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/Predictive%20Modeling%20for%20Real%20Estate%20Pricing%20in%20Barcelona.R">Predicting Real Estate Prices in Barcelona</a></h2>
-									</header>
-									<a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/Predictive%20Modeling%20for%20Real%20Estate%20Pricing%20in%20Barcelona.R" class="image fit"><img src="images/RE pricing.jpg" alt="" /></a>
-									<p>Built a pricing model to estimate property values across Barcelona using location and housing features. The model identified key factors influencing price and improved accuracy by 20%, helping make real estate decisions more data-driven and reliable.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/Predictive%20Modeling%20for%20Real%20Estate%20Pricing%20in%20Barcelona.R" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										
-										<h2><a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/NVIDIA%20Job%20Posting%20Analysis.pdf"></a>NVIDIA Job Posting & Talent Strategy Analysis</h2>
-									</header>
-									<a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/NVIDIA%20Job%20Posting%20Analysis.pdf" class="image fit"><img src="images/NVIDIA.webp" alt="" /></a>
-									<p>Analyzed hiring trends, job roles, and skill gaps at NVIDIA to uncover what the company values in early-career talent. The study provided actionable insights for students aiming to break into AI and software roles to boost employability.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/NVIDIA%20Job%20Posting%20Analysis.pdf" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										
-										<h2><a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/Tarte%20Consulting%20Report.pdf"></a>Tarte Market Analysis & Expansion Strategy</h2>
-									</header>
-									<a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/Tarte%20Consulting%20Report.pdf" class="image fit"><img src="images/Tate.png" alt="" /></a>
-									<p>Advised Tarte Cosmetics on entering the clean toiletries market to boost revenue and brand reach. Proposed a product and marketing strategy projected to generate $30M in revenue within 3 years after thorough Market Analysis.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/Tarte%20Consulting%20Report.pdf" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										
-										<h2><a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/AI%20Automoation%20Workflow.pdf">AI-Powered Job Application Automation using n8n</a></h2>
-									</header>
-									<a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/AI%20Automoation%20Workflow.pdf" class="image fit"><img src="images/AI Auto 2.png" alt="" /></a>
-									<p>Designed and deployed an end-to-end job application workflow using n8n, integrating AI tools, HTTP APIs, and document services. The system automates job scraping, filters relevant roles, rewrites resumes using AI, and sends tailored applications, reducing manual effort and increasing outreach efficiency.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects/blob/main/AI%20Automoation%20Workflow.pdf" class="button">View Project</a></li>
-									</ul>
-								</article>
-							</section>
-
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>Arlington, VA</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(919) 641-0266</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">aditya.menon@duke.edu</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://www.linkedin.com/in/-aditya-menon/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="https://www.instagram.com/adii_menonn/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="https://github.com/Aditya-Menon-Analyst/Data-Analytics-Projects" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+  <script src="assets/site.js"></script>
+</body>
 </html>
