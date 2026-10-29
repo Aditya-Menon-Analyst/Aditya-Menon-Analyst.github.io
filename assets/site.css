@@ -91,7 +91,7 @@ a:hover { text-decoration-thickness: 2px; }
   font-weight: 800; font-variation-settings: "wdth" 125;
   text-decoration: none; letter-spacing: -0.01em;
 }
-.top nav { display: flex; gap: clamp(14px, 3vw, 32px); }
+.top nav { display: flex; flex-wrap: wrap; gap: 6px clamp(14px, 3vw, 32px); }
 .top nav a { text-decoration: none; color: var(--muted); }
 .top nav a:hover { color: var(--ink); }
 
@@ -283,6 +283,7 @@ h2 {
 .foot p { margin: 0; }
 
 @media (max-width: 560px) {
+  .top nav { font-size: 0.9rem; column-gap: 12px; }
   .row-btn { grid-template-columns: 5px minmax(0, 1fr) auto; padding: 16px 0; }
   .result small { display: none; }
   .verb sup { vertical-align: 2.2em; }
